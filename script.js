@@ -51,6 +51,8 @@ var predatorArr=[];
 
 function setup() {
    generator(25,25,5,7,25);
+
+   
    frameRate(15);
    createCanvas(matrix[0].length * side, matrix.length * side);
    background('#acacac');
@@ -70,10 +72,11 @@ function setup() {
         
 //     }
 //}
-   console.log(matrix);
+  // console.log(matrix);
 }
 
 function draw(){
+   // console.log(matrix);
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[0].length; j++) {
             

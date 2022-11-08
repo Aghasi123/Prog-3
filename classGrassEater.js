@@ -5,8 +5,8 @@ class GrassEater {
     this.energy = 15;
     this.multiplay = 0;
     this.directions = [];
-    grassEaterArr.push(this);
-    matrix[y][x] = 2;
+    // grassEaterArr.push(this);
+    // matrix[y][x] = 2;
   }
   getNewDirections() {
     this.directions = [

@@ -13,8 +13,6 @@ class Grass {
       [this.x, this.y + 1],
       [this.x + 1, this.y + 1],
     ];
-    // grassArr.push(this);
-    // matrix[y][x] = 1;
   }
   chooseCell(character) {
     var found = [];

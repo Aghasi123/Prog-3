@@ -9,8 +9,8 @@ class HardGrass {
     this.previousCharacter = 0;
     this.wannaDestroy = 0;
     this.directions = [];
-    hardGrassArr.push(this);
-    matrix[y][x] = 3;
+    // hardGrassArr.push(this);
+    // matrix[y][x] = 3;
   }
   getNewDirections() {
     this.directions = [

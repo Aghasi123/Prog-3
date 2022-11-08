@@ -5,8 +5,8 @@ class Predator {
     this.energy = 18;
     this.multiplay = 0;
     this.directions = [];
-    predatorArr.push(this);
-    matrix[y][x] = 5;
+    // predatorArr.push(this);
+    // matrix[y][x] = 5;
   }
   getNewDirections() {
     this.directions = [

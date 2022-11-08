@@ -4,8 +4,8 @@ class AllEater {
     this.y = y;
     this.multiplay = 0;
     this.directions = [];
-    allEaterArr.push(this);
-    matrix[y][x] = 4;
+    // allEaterArr.push(this);
+    // matrix[y][x] = 4;
   }
   getNewDirections() {
     this.directions = [

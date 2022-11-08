@@ -50,22 +50,40 @@ var allEaterArr = [];
 var predatorArr = [];
 
 function setup() {
+  //console.log("aaaaaa")
   generator(25, 25, 5, 7, 25);
-  // for (let i = 0; i < matrix.length; i++) {
-  //   for (let j = 0; j < matrix[0].length; j++) {
-  //     if (matrix[i][j] == 1) {
-  //       grassArr.push(new Grass(j,i))
-     
-  //     }
-  //   }
-  // }
-  frameRate(15);
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[0].length; j++) {
+      if (matrix[i][j] == 1) {
+        let ge = new Grass(j, i);
+        grassArr.push(ge)
+      }
+      if (matrix[i][j] == 2) {
+        let ge = new GrassEater(j, i);
+        grassEaterArr.push(ge)
+      }
+      if (matrix[i][j] == 3) {
+        let ge = new HardGrass(j, i);
+        hardGrassArr.push(ge)
+      }
+      if (matrix[i][j] == 4) {
+        let ge = new AllEater(j, i);
+        allEaterArr.push(ge)
+      }
+      if (matrix[i][j] == 5) {
+        let ge = new Predator(j, i);
+        predatorArr.push(ge)
+      }
+      }
+    }
+
+  frameRate(10);
   createCanvas(matrix[0].length * side, matrix.length * side);
   background("#acacac");
 }
 
 function draw() {
-  //console.log(matrix[0]);
+ //console.log(grassArr);
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       if (matrix[i][j] == 1) {

@@ -9,8 +9,6 @@ class HardGrass {
     this.previousCharacter = 0;
     this.wannaDestroy = 0;
     this.directions = [];
-    // hardGrassArr.push(this);
-    // matrix[y][x] = 3;
   }
   getNewDirections() {
     this.directions = [
@@ -51,6 +49,8 @@ class HardGrass {
     const newCell = random(this.chooseCell(this.whereGo()));
     if (this.multiplay >= 10 && newCell) {
       const newhardgrass = new HardGrass(newCell[0], newCell[1]);
+      matrix[newCell[1]][newCell[0]]=3;
+      hardGrassArr.push(newhardgrass);
       this.multiplay = 0;
     }
     this.multiplay++;

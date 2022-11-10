@@ -5,8 +5,6 @@ class GrassEater {
     this.energy = 15;
     this.multiplay = 0;
     this.directions = [];
-    // grassEaterArr.push(this);
-    // matrix[y][x] = 2;
   }
   getNewDirections() {
     this.directions = [
@@ -57,10 +55,10 @@ class GrassEater {
       this.energy++;
       for (var i in grassArr) {
         if (newX == grassArr[i].x && newY == grassArr[i].y) {
-          console.log("BEFORE",grassArr[i]);
+          //console.log("BEFORE",grassArr[i]);
           grassArr.splice(i, 1);
 
-          console.log("AFTER",grassArr[i]);
+          //console.log("AFTER",grassArr[i]);
           break;
         }
         if (this.energy >= 30) {
@@ -93,10 +91,10 @@ class GrassEater {
     }
   }
   mul() {
-    const newCell = random(this.chooseCell(0));
-    if (this.multiplay >= 15 && newCell) {
-      // console.log("BEFORE",grassEaterArr[]);      
-      const newGrassEater = new GrassEater(newCell[0], newCell[1]);
+    let newCell = random(this.chooseCell(0));
+    if (this.multiplay >= 15 && newCell) {   
+      let newGrassEater = new GrassEater(newCell[0], newCell[1]);
+      matrix[newCell[1]][newCell[0]]=2;
       grassEaterArr.push(newGrassEater);
       this.multiplay = 0;
     }

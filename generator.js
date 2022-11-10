@@ -8,20 +8,18 @@ function generator(grass, grassEater, hardGrass, alleater, predator) {
     let x1 = Math.floor(Math.random() * (matrix.length - 1));
     let y1 = Math.floor(Math.random() * (matrix[0].length - 1));
     matrix[y1][x1]=1;
-    // let gr = new Grass(x1, y1);
-    // grassArr.push(gr)
   }
   for (let i = 0; i < grassEater; i++) {
     let x1 = Math.floor(Math.random() * (matrix.length - 1));
     let y1 = Math.floor(Math.random() * (matrix[0].length - 1));
     matrix[y1][x1]=2;
     // let ge=new GrassEater(x1, y1);
-    // grassEaterArr.push(ge)
+    // grassEaterArr.push(ge);
   }
   for (let i = 0; i < hardGrass; i++) {
     let x1 = Math.floor(Math.random() * (matrix.length - 1));
     let y1 = Math.floor(Math.random() * (matrix[0].length - 1));
-    matrix[x1][y1]=3;
+    matrix[y1][x1]=3;
     // let hg=new HardGrass(x1, y1);
     // hardGrassArr.push(hg);    
   }
@@ -35,7 +33,7 @@ function generator(grass, grassEater, hardGrass, alleater, predator) {
   for (let i = 0; i < predator; i++) {
     let x1 = Math.floor(Math.random() * (matrix.length - 1));
     let y1 = Math.floor(Math.random() * (matrix[0].length - 1));
-    matrix[x1][y1]=5;
+    matrix[y1][x1]=5;
     // let pr=new Predator(x1, y1);
     // predatorArr.push(pr)
   }

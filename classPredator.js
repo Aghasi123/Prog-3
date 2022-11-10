@@ -5,8 +5,6 @@ class Predator {
     this.energy = 18;
     this.multiplay = 0;
     this.directions = [];
-    // predatorArr.push(this);
-    // matrix[y][x] = 5;
   }
   getNewDirections() {
     this.directions = [
@@ -110,7 +108,9 @@ class Predator {
   mul() {
     const newCell = random(this.chooseCell(0));
     if (this.multiplay >= 15 && newCell) {
-      const newGrassEater = new Predator(newCell[0], newCell[1]);
+      const newPredator= new Predator(newCell[0], newCell[1]);
+      matrix[newCell[1]][newCell[0]]=5;
+      predatorArr.push(newPredator);
       this.multiplay = 0;
     }
     this.multiplay++;

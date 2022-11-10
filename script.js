@@ -43,7 +43,6 @@ var matrix = [
 
 var side = 20;
 var grassArr = [];
-
 var grassEaterArr = [];
 var hardGrassArr = [];
 var allEaterArr = [];
@@ -51,39 +50,38 @@ var predatorArr = [];
 
 function setup() {
   //console.log("aaaaaa")
-  generator(25, 25, 5, 7, 25);
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[0].length; j++) {
-      if (matrix[i][j] == 1) {
-        let ge = new Grass(j, i);
-        grassArr.push(ge)
-      }
-      if (matrix[i][j] == 2) {
-        let ge = new GrassEater(j, i);
-        grassEaterArr.push(ge)
-      }
-      if (matrix[i][j] == 3) {
-        let ge = new HardGrass(j, i);
-        hardGrassArr.push(ge)
-      }
-      if (matrix[i][j] == 4) {
-        let ge = new AllEater(j, i);
-        allEaterArr.push(ge)
-      }
-      if (matrix[i][j] == 5) {
-        let ge = new Predator(j, i);
-        predatorArr.push(ge)
-      }
-      }
-    }
-
-  frameRate(10);
+  generator(25, 10, 10, 4, 5);
+  frameRate(15);
   createCanvas(matrix[0].length * side, matrix.length * side);
   background("#acacac");
+  for (let y = 0; y < matrix.length; y++) {
+    for (let x = 0; x < matrix[0].length; x++) {
+        if (matrix[y][x] == 1){
+            let gr = new Grass(x, y);
+            grassArr.push(gr);
+        }
+        else if (matrix[y][x] == 2){
+            let eater = new GrassEater(x, y);
+            grassEaterArr.push(eater);
+        }
+        else if (matrix[y][x] == 3){
+            let hardGrass = new HardGrass(x, y);
+            hardGrassArr.push(hardGrass);
+        }
+        else if (matrix[y][x] == 4){
+            let allEater = new AllEater(x, y);
+            allEaterArr.push(allEater);
+        }
+        else if (matrix[y][x] == 5){
+            let predator = new Predator(x, y);
+            predatorArr.push(predator);
+        }
+    }
+}
 }
 
 function draw() {
- //console.log(grassArr);
+ console.log(grassArr);
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       if (matrix[i][j] == 1) {

@@ -49,7 +49,6 @@ var allEaterArr = [];
 var predatorArr = [];
 
 function setup() {
-  //console.log("aaaaaa")
   generator(25, 10, 10, 4, 5);
   frameRate(15);
   createCanvas(matrix[0].length * side, matrix.length * side);
@@ -81,7 +80,6 @@ function setup() {
 }
 
 function draw() {
- console.log(grassArr);
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       if (matrix[i][j] == 1) {

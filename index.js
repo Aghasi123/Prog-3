@@ -2,7 +2,7 @@ var express = require("express");
 
 var app = express();
 
-app.use(express.static("Prog-3"));
+app.use(express.static("group_1"));
 
 app.get("/", function(req, res){
 

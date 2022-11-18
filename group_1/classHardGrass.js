@@ -1,4 +1,4 @@
-class HardGrass  extends Animals{
+class HardGrass extends Animals{
   constructor(x, y){
     super(x, y);
     this.multiplay = 0;

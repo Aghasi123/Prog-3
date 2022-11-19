@@ -1,4 +1,4 @@
-class Animals {
+module.exports=class Animals {
     constructor(x, y) {
         this.x = x;
         this.y = y;

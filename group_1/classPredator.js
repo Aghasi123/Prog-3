@@ -1,4 +1,5 @@
-class Predator extends Animals{
+var Animals=require("./classAnimals");
+module.exports=class Predator extends Animals{
   constructor(x, y) {
     super(x,y)
     this.energy = 18;
@@ -70,7 +71,6 @@ class Predator extends Animals{
         if (newX == hardGrassArr[i].x && newY == hardGrassArr[i].y) {
           hardGrassArr[i].minusHealth();
           if (hardGrassArr[i].health <= 0) {
-            console.log(hardGrassArr[i].health);
             matrix[newY][newX] = 5;
             matrix[this.y][this.x] = 0;
             this.x = newX;

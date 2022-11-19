@@ -1,4 +1,5 @@
-class HardGrass extends Animals{
+var Animals=require("./classAnimals");
+module.exports=class HardGrass extends Animals{
   constructor(x, y){
     super(x, y);
     this.multiplay = 0;

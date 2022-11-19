@@ -1,4 +1,5 @@
-class AllEater extends Animals{
+var Animals=require("./classAnimals");
+module.exports=class AllEater extends Animals{
   constructor(x, y) {
     super(x,y)
     this.multiplay = 0;

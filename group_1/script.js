@@ -1,3 +1,4 @@
+
 var matrix = [
   [],
   [],
@@ -42,41 +43,13 @@ var matrix = [
 ];
 
 var side = 20;
-var grassArr = [];
-var grassEaterArr = [];
-var hardGrassArr = [];
-var allEaterArr = [];
-var predatorArr = [];
 
 function setup() {
   generator(25, 10, 10, 4, 5);
   frameRate(15);
   createCanvas(matrix[0].length * side, matrix.length * side);
   background("#acacac");
-  for (let y = 0; y < matrix.length; y++) {
-    for (let x = 0; x < matrix[0].length; x++) {
-        if (matrix[y][x] == 1){
-            let gr = new Grass(x, y);
-            grassArr.push(gr);
-        }
-        else if (matrix[y][x] == 2){
-            let eater = new GrassEater(x, y);
-            grassEaterArr.push(eater);
-        }
-        else if (matrix[y][x] == 3){
-            let hardGrass = new HardGrass(x, y);
-            hardGrassArr.push(hardGrass);
-        }
-        else if (matrix[y][x] == 4){
-            let allEater = new AllEater(x, y);
-            allEaterArr.push(allEater);
-        }
-        else if (matrix[y][x] == 5){
-            let predator = new Predator(x, y);
-            predatorArr.push(predator);
-        }
-    }
-}
+  
 }
 
 function draw() {
@@ -98,23 +71,15 @@ function draw() {
       rect(j * side, i * side, side, side);
     }
   }
+  
 
 
 
-
-  for (let i in grassArr) {
-    grassArr[i].mul();
-  }
-  for (let i in grassEaterArr) {
-    grassEaterArr[i].eat();
-  }
-  for (let i in hardGrassArr) {
-    hardGrassArr[i].move();
-  }
-  for (let i in allEaterArr) {
-    allEaterArr[i].shot();
-  }
-  for (let i in predatorArr) {
-    predatorArr[i].eat();
-  }
+  
 }
+function click() {
+  console.log("click");
+  noLoop();
+}
+var clicker=document.getElementById("run");
+clicker.addEventListener("click", click);

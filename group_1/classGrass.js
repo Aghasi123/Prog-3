@@ -1,4 +1,5 @@
-class Grass extends Animals{
+var Animals=require("./classAnimals");
+module.exports=class Grass extends Animals{
   mul() {
       let newCell = random(this.chooseCell(0));
       if (this.multiplay >= 4 && newCell) {

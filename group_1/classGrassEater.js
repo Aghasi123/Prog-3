@@ -1,4 +1,5 @@
-class GrassEater  extends Animals{
+var Animals=require("./classAnimals");
+module.exports=class GrassEater extends Animals{
   constructor(x, y){
     super(x, y);
     this.energy = 15;
@@ -32,17 +33,13 @@ class GrassEater  extends Animals{
       const newX = eatCells[0];
       const newY = eatCells[1];
       matrix[newY][newX] = 2;
-
       matrix[this.y][this.x] = 0;
       this.x = newX;
       this.y = newY;
       this.energy++;
       for (var i in grassArr) {
         if (newX == grassArr[i].x && newY == grassArr[i].y) {
-          //console.log("BEFORE",grassArr[i]);
           grassArr.splice(i, 1);
-
-          //console.log("AFTER",grassArr[i]);
           break;
         }
         if (this.energy >= 30) {
